@@ -54,7 +54,7 @@ export function BottomNav() {
   }
 
   return (
-    <nav className="fixed bottom-0 left-0 right-0 bg-white shadow-[var(--shadow-nav)] pb-[env(safe-area-inset-bottom)]">
+    <nav className="fixed bottom-0 left-0 right-0 glass-strong shadow-[var(--shadow-nav)] pb-[env(safe-area-inset-bottom)]">
       <div className="grid grid-cols-4 max-w-lg mx-auto">
         {tabs.map((tab) => {
           const active = isActive(tab.href);
@@ -62,7 +62,7 @@ export function BottomNav() {
             <Link
               key={tab.href}
               href={tab.href}
-              className={`flex flex-col items-center gap-1 py-2.5 text-[11px] transition-colors relative ${
+              className={`flex flex-col items-center gap-1 py-2.5 text-[11px] transition-all duration-300 relative ${
                 active
                   ? "text-primary-500 font-bold"
                   : "text-neutral-400 hover:text-neutral-600 font-normal"
@@ -71,7 +71,7 @@ export function BottomNav() {
               {tab.icon}
               <span>{tab.label}</span>
               {active && (
-                <span className="absolute top-0 left-1/2 -translate-x-1/2 w-8 h-0.5 rounded-full bg-accent-yellow" />
+                <span className="absolute top-0 left-1/2 -translate-x-1/2 w-6 h-[3px] rounded-full bg-gradient-to-r from-accent-yellow to-accent-orange" />
               )}
             </Link>
           );

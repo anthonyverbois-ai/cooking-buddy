@@ -23,7 +23,7 @@ export function RecipeCard({
   cookedCount,
 }: RecipeCardProps) {
   return (
-    <div className="w-full bg-white rounded-3xl p-5 shadow-card hover:shadow-card-hover transition space-y-3">
+    <div className="press-effect w-full card-refined rounded-3xl p-5 shadow-card hover:shadow-card-hover transition-all duration-300 space-y-3">
       <div className="flex items-start justify-between gap-2">
         <button
           type="button"
@@ -46,7 +46,7 @@ export function RecipeCard({
               e.stopPropagation();
               onToggleFavorite(recipe);
             }}
-            className="flex-shrink-0 p-1 transition-all duration-200"
+            className="flex-shrink-0 p-1.5 rounded-full transition-all duration-300 hover:bg-accent-orange/10"
             aria-label={isFavorite ? "Retirer des favoris" : "Ajouter aux favoris"}
           >
             <svg
@@ -57,8 +57,8 @@ export function RecipeCard({
               strokeWidth={1.5}
               strokeLinecap="round"
               strokeLinejoin="round"
-              className={`size-5 transition-colors duration-200 ${
-                isFavorite ? "text-accent-orange" : "text-neutral-300 hover:text-accent-orange"
+              className={`size-5 transition-all duration-300 ${
+                isFavorite ? "text-accent-orange scale-110" : "text-neutral-300 hover:text-accent-orange"
               }`}
             >
               <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
@@ -110,7 +110,7 @@ export function RecipeCard({
             onReplace(recipe);
           }}
           disabled={replacing}
-          className="w-full flex items-center justify-center gap-1.5 py-1.5 text-xs font-medium font-sans text-neutral-500 hover:text-accent-orange hover:bg-primary-50 rounded-full transition-all duration-200 disabled:opacity-50"
+          className="w-full flex items-center justify-center gap-1.5 py-2 text-xs font-medium font-sans text-neutral-400 hover:text-accent-orange hover:bg-accent-orange/5 rounded-2xl border border-transparent hover:border-accent-orange/20 transition-all duration-300 disabled:opacity-50"
         >
           {replacing ? (
             <>

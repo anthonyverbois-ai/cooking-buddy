@@ -138,7 +138,7 @@ export function SetupForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-8">
+    <form onSubmit={handleSubmit} className="space-y-7">
       {error && (
         <div className="rounded-3xl bg-red-50 border border-red-200 p-4 text-sm text-red-700 whitespace-pre-line font-sans">
           {error}
@@ -156,9 +156,9 @@ export function SetupForm() {
               key={n}
               type="button"
               onClick={() => setPrefsState({ ...prefs, numberOfMeals: n })}
-              className={`size-10 rounded-full font-semibold text-sm font-sans transition-all duration-200 ${prefs.numberOfMeals === n
-                  ? "bg-primary-500 text-white shadow-card"
-                  : "bg-primary-100 text-primary-500 hover:bg-primary-500 hover:text-white"
+              className={`press-effect size-10 rounded-full font-semibold text-sm font-sans transition-all duration-300 ${prefs.numberOfMeals === n
+                  ? "bg-primary-500 text-white shadow-card ring-2 ring-primary-500/20"
+                  : "bg-white text-primary-500 border border-primary-100 hover:border-primary-300 hover:bg-primary-50"
                 }`}
             >
               {n}
@@ -178,9 +178,9 @@ export function SetupForm() {
               key={n}
               type="button"
               onClick={() => setPrefsState({ ...prefs, numberOfPersons: n })}
-              className={`size-10 rounded-full font-semibold text-sm font-sans transition-all duration-200 ${prefs.numberOfPersons === n
-                  ? "bg-primary-500 text-white shadow-card"
-                  : "bg-primary-100 text-primary-500 hover:bg-primary-500 hover:text-white"
+              className={`press-effect size-10 rounded-full font-semibold text-sm font-sans transition-all duration-300 ${prefs.numberOfPersons === n
+                  ? "bg-primary-500 text-white shadow-card ring-2 ring-primary-500/20"
+                  : "bg-white text-primary-500 border border-primary-100 hover:border-primary-300 hover:bg-primary-50"
                 }`}
             >
               {n}
@@ -200,9 +200,9 @@ export function SetupForm() {
               key={t}
               type="button"
               onClick={() => setPrefsState({ ...prefs, maxTimePerMeal: t })}
-              className={`rounded-full px-4 py-2 font-semibold text-sm font-sans transition-all duration-200 ${prefs.maxTimePerMeal === t
-                  ? "bg-primary-500 text-white shadow-card"
-                  : "bg-primary-100 text-primary-500 hover:bg-primary-500 hover:text-white"
+              className={`press-effect rounded-full px-4 py-2 font-semibold text-sm font-sans transition-all duration-300 ${prefs.maxTimePerMeal === t
+                  ? "bg-primary-500 text-white shadow-card ring-2 ring-primary-500/20"
+                  : "bg-white text-primary-500 border border-primary-100 hover:border-primary-300 hover:bg-primary-50"
                 }`}
             >
               {t} min
@@ -222,9 +222,9 @@ export function SetupForm() {
               key={obj}
               type="button"
               onClick={() => setPrefsState({ ...prefs, objective: obj })}
-              className={`rounded-full px-4 py-2 font-semibold text-sm font-sans transition-all duration-200 capitalize ${prefs.objective === obj
-                  ? "bg-primary-500 text-white shadow-card"
-                  : "bg-primary-100 text-primary-500 hover:bg-primary-500 hover:text-white"
+              className={`press-effect rounded-full px-4 py-2 font-semibold text-sm font-sans transition-all duration-300 capitalize ${prefs.objective === obj
+                  ? "bg-primary-500 text-white shadow-card ring-2 ring-primary-500/20"
+                  : "bg-white text-primary-500 border border-primary-100 hover:border-primary-300 hover:bg-primary-50"
                 }`}
             >
               {obj === "normal" ? "Équilibré" : "Sportif (protéiné)"}
@@ -244,9 +244,9 @@ export function SetupForm() {
               key={lvl}
               type="button"
               onClick={() => setPrefsState({ ...prefs, cookingLevel: lvl })}
-              className={`rounded-full px-3 py-2 font-semibold text-sm font-sans transition-all duration-200 capitalize ${prefs.cookingLevel === lvl
-                  ? "bg-primary-500 text-white shadow-card"
-                  : "bg-primary-100 text-primary-500 hover:bg-primary-500 hover:text-white"
+              className={`press-effect rounded-full px-3 py-2 font-semibold text-sm font-sans transition-all duration-300 capitalize ${prefs.cookingLevel === lvl
+                  ? "bg-primary-500 text-white shadow-card ring-2 ring-primary-500/20"
+                  : "bg-white text-primary-500 border border-primary-100 hover:border-primary-300 hover:bg-primary-50"
                 }`}
             >
               {lvl}
@@ -275,10 +275,10 @@ export function SetupForm() {
                   cuisine: prefs.cuisine === opt ? undefined : opt,
                 })
               }
-              className={`rounded-full px-3 py-1.5 text-sm font-medium font-sans transition-all duration-200 ${
+              className={`press-effect rounded-full px-3 py-1.5 text-sm font-medium font-sans transition-all duration-300 ${
                 prefs.cuisine === opt
-                  ? "bg-accent-orange text-white"
-                  : "bg-primary-100 text-primary-500 hover:bg-accent-orange hover:text-white"
+                  ? "bg-accent-orange text-white shadow-[var(--shadow-glow-orange)] ring-2 ring-accent-orange/20"
+                  : "bg-white text-primary-500 border border-primary-100 hover:border-accent-orange/40 hover:bg-accent-orange/5"
               }`}
             >
               {opt}
@@ -303,9 +303,9 @@ export function SetupForm() {
                   dietaryConstraints: toggleArrayItem(prefs.dietaryConstraints, opt),
                 })
               }
-              className={`rounded-full px-3 py-1.5 text-sm font-medium font-sans transition-all duration-200 ${prefs.dietaryConstraints.includes(opt)
-                  ? "bg-season-500 text-white"
-                  : "bg-primary-100 text-primary-500 hover:bg-season-500 hover:text-white"
+              className={`press-effect rounded-full px-3 py-1.5 text-sm font-medium font-sans transition-all duration-300 ${prefs.dietaryConstraints.includes(opt)
+                  ? "bg-season-500 text-white ring-2 ring-season-500/20"
+                  : "bg-white text-primary-500 border border-primary-100 hover:border-season-500/40 hover:bg-season-50"
                 }`}
             >
               {opt}
@@ -330,9 +330,9 @@ export function SetupForm() {
                   allergens: toggleArrayItem(prefs.allergens, opt),
                 })
               }
-              className={`rounded-full px-3 py-1.5 text-sm font-medium font-sans transition-all duration-200 ${prefs.allergens.includes(opt)
-                  ? "bg-red-400 text-white"
-                  : "bg-primary-100 text-primary-500 hover:bg-red-400 hover:text-white"
+              className={`press-effect rounded-full px-3 py-1.5 text-sm font-medium font-sans transition-all duration-300 ${prefs.allergens.includes(opt)
+                  ? "bg-red-400 text-white ring-2 ring-red-400/20"
+                  : "bg-white text-primary-500 border border-primary-100 hover:border-red-300 hover:bg-red-50"
                 }`}
             >
               {opt}
@@ -357,9 +357,9 @@ export function SetupForm() {
                   equipment: toggleArrayItem(prefs.equipment || [], opt),
                 })
               }
-              className={`rounded-full px-3 py-1.5 text-sm font-medium font-sans transition-all duration-200 ${prefs.equipment?.includes(opt)
-                  ? "bg-accent-orange text-white"
-                  : "bg-primary-100 text-primary-500 hover:bg-accent-orange hover:text-white"
+              className={`press-effect rounded-full px-3 py-1.5 text-sm font-medium font-sans transition-all duration-300 ${prefs.equipment?.includes(opt)
+                  ? "bg-accent-orange text-white shadow-[var(--shadow-glow-orange)] ring-2 ring-accent-orange/20"
+                  : "bg-white text-primary-500 border border-primary-100 hover:border-accent-orange/40 hover:bg-accent-orange/5"
                 }`}
             >
               {opt}
